@@ -3,6 +3,7 @@ package com.capitole.techtest.restfulwebservices.controller;
 import com.capitole.techtest.restfulwebservices.exception.PriceNotFoundException;
 import com.capitole.techtest.restfulwebservices.service.PriceDaoService;
 import com.capitole.techtest.restfulwebservices.service.dto.PriceDto;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,7 @@ public class PriceController {
 
 	
 	@GetMapping("/price")
-	public PriceDto retrievePrice(@RequestParam int brandId, @RequestParam int productId, @RequestParam LocalDateTime date) {
+	public PriceDto retrievePrice(@RequestParam @NotNull Integer brandId, @RequestParam @NotNull Integer productId, @RequestParam LocalDateTime date) {
 
 		PriceDto price = service.findByBrandAndProductAndDate(brandId,productId,date);
 		
