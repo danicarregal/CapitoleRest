@@ -2,7 +2,9 @@
 This project is a part of a technical test for a position as a software engineer at Capitole. The selected applicant will be part of a team working for the company Inditex.
 
 # Getting Started
-This section is to be written
+### Example of Use
+GET request to :
+#### localhost:8080/price?brandId=1&productId=35455&date=2020-06-14-10.00.00
 
 ### Reference Documentation
 For further reference, please consider the following sections:

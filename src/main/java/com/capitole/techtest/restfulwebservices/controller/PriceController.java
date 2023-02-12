@@ -16,9 +16,9 @@ public class PriceController {
 	private final PriceDaoService service;
 
 	public PriceController(PriceDaoService service) {
+
 		this.service = service;
 	}
-
 	
 	@GetMapping("/price")
 	public PriceDto retrievePrice(@RequestParam @NotNull Integer brandId, @RequestParam @NotNull Integer productId, @RequestParam LocalDateTime date) {

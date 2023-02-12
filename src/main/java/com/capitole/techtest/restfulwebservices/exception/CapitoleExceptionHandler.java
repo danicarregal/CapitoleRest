@@ -34,7 +34,7 @@ public class CapitoleExceptionHandler extends ResponseEntityExceptionHandler{
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(
 			MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
 		ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), 
-				"Errores:" + ex.getErrorCount() + " Primer Error:" + ((ex.getFieldError()!=null)?ex.getFieldError().getDefaultMessage():""), request.getDescription(false));
+				"Errors:" + ex.getErrorCount() + " First Error:" + ((ex.getFieldError()!=null)?ex.getFieldError().getDefaultMessage():""), request.getDescription(false));
 		return new ResponseEntity(errorDetails, HttpStatus.BAD_REQUEST);
 	}
 }
