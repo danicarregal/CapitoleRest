@@ -21,7 +21,7 @@ public class PriceController {
 	}
 	
 	@GetMapping("/price")
-	public PriceDto retrievePrice(@RequestParam @NotNull Integer brandId, @RequestParam @NotNull Integer productId, @RequestParam LocalDateTime date) {
+	public PriceDto retrievePrice(@RequestParam @NotNull Integer brandId, @RequestParam @NotNull Integer productId, @RequestParam @NotNull LocalDateTime date) {
 
 		PriceDto price = service.findByBrandAndProductAndDate(brandId,productId,date);
 		
